@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 #include "annonces.h"
 
 
@@ -68,8 +69,8 @@ void charger(fichier){
     //Lecture dans le fichier
    while fscanf(fichier, "%d %d %d %f %f %f %f %f, &Annonce.id, &Annonce.type, &Annonce.pieces, &Annonces.surface, &Annonce.loyer, &Annonce.charges, &Annonce.prix) != EOF)
                 {
-                    creerAnnonce(  
-                    // INSTRUCTIONS
+                    creerAnnonce(fscanf(fichier, "%d %d %d %f %f %f %f %f, &Annonce.id, &Annonce.type, &Annonce.pieces, &Annonces.surface, &Annonce.loyer, &Annonce.charges, &Annonce.prix) != EOF);
+                    afficher();
                     
                 }      
         
