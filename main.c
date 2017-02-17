@@ -8,6 +8,7 @@ int main(){
 
 // ICi mettre le compteur, attention si fichier d'entrée, le charger sur le dernier ID
 
+int compteur = 0;
 const int TAILLE = 20;    
 
 Liste liste = NULL;
