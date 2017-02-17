@@ -11,6 +11,7 @@ int main(){
 Liste liste = NULL;
 
 // MENU d'ACCUEIL
+    // Attention, mettre une vérif de saisie [ 10 ]
     int choix_accueil =0;
     printf("Bienvenue à l'Enseigne Spécialisée des Solution Immobilières !\nQue voulez vous faire ?\n 1 : Ajouter une annonce\n2 : Afficher les annonces\n3 : Trier les annonces par type (appartement ou maison)\n4 : Chercher par nombre de pièces\n5 : Chercher par surface mini\n6 : Recherche multi-critères\n7 : Tri et recherche par loyer\n8 : Exporter les annonces\n9 : Charger les annonces\n10 : Quitter\n\n");
     scanf(%d", &choix_accueil;
@@ -48,6 +49,7 @@ Liste liste = NULL;
                     // Instructions
                     break;
               
+              //Charger les annonces
               case :9 :
                     // Instructions
                     break;              
