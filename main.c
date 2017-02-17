@@ -1,12 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#inclufde <string.h>
 #include "annonces.h"
 
 int main(){
 
 // ICi mettre le compteur, attention si fichier d'entrée, le charger sur le dernier ID
 
+const int TAILLE = 20;    
 
 Liste liste = NULL;
 
@@ -19,44 +21,47 @@ Liste liste = NULL;
           {
               case :1 :
                     // Instructions
-                    break;
+                  break;
               
               case :2 :
                     // Instructions
-                    break;
+                  break;
               
               case :3 :
                     // Instructions
-                    break;
+                  break;
               
               case :4 :
                     // Instructions
-                    break;              
+                  break;              
               
               case :5 :
                     // Instructions
-                    break;
+                  break;
               
               case :6 :
                     // Instructions
-                    break;
+                  break;
               
               case :7 :
                     // Instructions
-                    break;
+                  break;
               
               case :8 :
                     // Instructions
-                    break;
+                  break;
               
               //Charger les annonces
               case :9 :
-                    // Instructions
-                    break;              
+                  char fichier [TAILLE];    
+                  printf("Saisissez le noom exact de votre fichier. Vérifiez bien sa présence dans le répertoire du programme !\n);
+                  scanf(%s",&fichier);
+                  charger(fichier);
+                  break;              
               
               case :10 :
                     // Instructions
-                    break;
+                  break;
           }
               
               
