@@ -22,6 +22,6 @@ Liste creerAnnonce(Liste liste, int id);
 
 Liste afficher(Liste liste);
 
-Liste charger(path);
+Liste charger(fichier);
 
 #endif 
