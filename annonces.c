@@ -37,8 +37,6 @@ else {
     }
 }
 
-
-
 // AFFICHER LES ANNONCES
 void afficher (Liste liste){
     //On parcours la liste
@@ -46,5 +44,16 @@ void afficher (Liste liste){
     while (annonce !=NULL){
         printf ("Annonce n° : %d \nType : %s\nNb pièces :  %d\nSurface :  %.2f\nLoyer :  %.2f\nCharges :  %.2f\n Prix total %.2f\n\n", annonce->id, annonce->type, annonce->pieces, annonce->surface, annonce->loyer, annonce->charges, annonce->prix);
         annonce = annonce->next;
+    }   
+}
+
+// CHARGER LA LISTE DEPUIS UN FICHIER
+
+void charger(path){
+    File * fichier = NULL;
+    fichier = fopen(path),r"r");
+    if (fichier == NULL){
+        exit(EXIT_FAILURE):
     }
+    
 }
