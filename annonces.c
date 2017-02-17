@@ -49,9 +49,9 @@ void afficher (Liste liste){
 
 // CHARGER LA LISTE DEPUIS UN FICHIER
 
-void charger(nom_fichier){
+void charger(fichier){
     File * fichier = NULL;
-    fichier = fopen(nom_fichier),r"r");
+    fichier = fopen(fichier),r"r");
     if (fichier == NULL){
         exit(EXIT_FAILURE):
     }
