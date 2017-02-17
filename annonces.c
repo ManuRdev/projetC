@@ -56,4 +56,15 @@ void charger(nom_fichier){
         exit(EXIT_FAILURE):
     }
     
+    //Lecture dans le fichier
+   while fscanf(fichier, "%d %d %d %f %f %f %f %f, &Annonce.id, &Annonce.type, &Annonce.pieces, &Annonces.surface, &Annonce.loyer, &Annonce.charges, &Annonce.prix) != EOF)
+                {
+                    
+                    // INSTRUCTIONS
+                    
+                }      
+        
+    //Fermeture du fichier
+    fclose(fichier);
+    
 }
