@@ -12,7 +12,7 @@ struct Annonce
     unsigned float loyer = 0;
     unsigned float charges = 0;
     unsigned float prix = 0;            //Loyer + Charges
-}Annone; 
+}Annonce; 
 
 // On défini l'alais
 typedef Annonce* Liste;
