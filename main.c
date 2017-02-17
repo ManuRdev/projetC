@@ -55,7 +55,7 @@ Liste liste = NULL;
               case :9 :
                   char fichier [TAILLE];    
                   printf("Saisissez le noom exact de votre fichier. Vérifiez bien sa présence dans le répertoire du programme !\n);
-                  scanf(%s",&fichier);
+                  scanf(%s",fichier);
                   charger(fichier);
                   break;              
               
