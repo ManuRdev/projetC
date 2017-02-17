@@ -2,7 +2,7 @@
 
 Pour le premier rendu :
 
-Choix des variables : int32_t (la plus petite place en mémoire)
+Choix des variables : int32_t (taille en mémoire définie par <stdint.h>, plus propre. (peut être 8_t ? check la contenance)
 
 
 Projet de groupe
