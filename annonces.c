@@ -7,7 +7,7 @@
 
 
 // Création d'annonces
-Liste creerAnnonce (Liste liste, int id;){
+Liste creerAnnonce (Liste liste, int type, int pieces, float surface, float loyer, float charges;){
 Annonce * new = NULL;
 new = malloc(sizeof(*new));
 
@@ -18,7 +18,13 @@ if new = NULL; {
 // On remplit la nouvelle annonce avec les données
 compteur =+1;
 new->id = compteur;
-
+new->type = type;
+new->surface = surface;
+new->loyer = loyer;
+new->charges = charges;
+new->prix = new.loyer + new.charges;  
+    
+    
 //Si la liste est vide, on retourne cet élément pour qu'il devienne le premier
 if (liste == NULL){
     return new;                          
@@ -50,8 +56,11 @@ void afficher (Liste liste){
 // CHARGER LA LISTE DEPUIS UN FICHIER
 
 void charger(fichier){
+    printf("Attention, les données non enregistrées seont perdues ! Continuer ?\n");
+    //Gerer le switch case pour continuer
+    compteur = 0;
     File * fichier = NULL;
-    fichier = fopen(fichier),r"r");
+    fichier = fopen(fichier),"r");
     if (fichier == NULL){
         exit(EXIT_FAILURE):
     }
@@ -59,7 +68,7 @@ void charger(fichier){
     //Lecture dans le fichier
    while fscanf(fichier, "%d %d %d %f %f %f %f %f, &Annonce.id, &Annonce.type, &Annonce.pieces, &Annonces.surface, &Annonce.loyer, &Annonce.charges, &Annonce.prix) != EOF)
                 {
-                    
+                    creerAnnonce(  
                     // INSTRUCTIONS
                     
                 }      
