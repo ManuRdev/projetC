@@ -1,12 +1,11 @@
 # projetC
 
-Pour le premier rendu :
+Base pour le projet C : 
 
-Choix des variables : int32_t (taille en mémoire définie par <stdint.h>, plus propre. (peut être 8_t ? check la contenance)
+Pour l'instant orienté compilation linux. 
+Si compilation sur Windows remplacer System("Clear") par System("Cls")
 
+Séparation des menus de navigation, opérations sur liste chainé, type.
 
-
-
-WARNING : NE PAS COMPILER, il ya un malloc sans free !!!
-
-
+Actuellement juste Menu principal -> 1. Ajout , et -> 2. Afficher -> Afficher toutes les annonces
+sont fonctionnels, ainsi que les retours menus précédents.  
