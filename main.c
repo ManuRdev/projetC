@@ -20,13 +20,25 @@
 #include "menu.h"
 #include "annonce.h"
 
-int	main ()
+int	main (int argc, char *argv[])
 {
 	Liste	liste = NULL;
-	int	choix = 0;
+	FILE *fichier = NULL;
 
-	choix = menuPrincipal();
-	choixPrincipal(choix, liste);
+	if(argc == 2)
+	{
+		fichier = fopen(argv[1], "r");
+		if(fichier == NULL)
+		{
+			exit(EXIT_FAILURE);
+		}
+	
+	liste = lireAnnonce(liste, fichier);
+	fclose(fichier);
+
+	}
+	
+	choixPrincipal(menuPrincipal(0, liste), liste);
 
 	return 0;
 }

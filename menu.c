@@ -22,18 +22,24 @@
 
 //Fonction menuPrincipal qui pourra être utilisé à loisir
 
-int	menuPrincipal()
+int	menuPrincipal(int erreur_saisie, Liste liste)
 {
 	int choix_principal = 0;
+	int nb_anno = calculerNbAnnonce(liste);
 
 	system("clear");
+	MACRO();
 	printf("-----    Menu Principal   -----\n\n");
-	printf("Souhaitez vous :\n\n");
+	printf("Il y a actuellement %d annonce(s) dans votre base de données.\n", nb_anno);
+	printf("Souhaitez-vous :\n\n");
 	printf("1. Ajouter une ou plusieurs annonces\n");
 	printf("2. Afficher les annonces\n");
 	printf("3. Sauvegarder vos annonces\n");
 	printf("4. Quitter\n\n");
-	printf("Votre choix : ");
+	if(erreur_saisie)
+		printf("Erreur de saisie, veuillez recommencer : ");
+	else
+		printf("Votre choix : ");
 	scanf("%d", &choix_principal);
 	return choix_principal;
 }
@@ -42,24 +48,22 @@ int	menuPrincipal()
 
 void	choixPrincipal(int choix, Liste liste)
 {
-	int test = 0;
-
 	switch(choix) 
 	{
 		case 1 :
 			menuAjout(liste);
 			break;
 		case 2 :
-			test = menuAffichage();
-			choixAffichage(test, liste);
+			choixAffichage(menuAffichage(0), liste);
 			break;
 		case 3 :
+			sauvegardeFichier(liste);
+			choixPrincipal(menuPrincipal(0, liste), liste);
 			break;
 		case 4 :
 			break;
 		default :
-			printf("Erreur de saisie, veuillez recommencer :\n");
-			menuPrincipal();
+			choixPrincipal(menuPrincipal(1, liste), liste);
 			break;
 	}
 }
@@ -69,7 +73,6 @@ void	choixPrincipal(int choix, Liste liste)
 void	menuAjout(Liste liste)
 {
 	int	nb_anno = 0;
-	int	choix = 0;
 	
 	system("clear");
 	printf("-----    Menu Ajout    -----\n\n");
@@ -81,8 +84,7 @@ void	menuAjout(Liste liste)
 
 	if(nb_anno == 0)
 	{
-		choix = menuPrincipal();
-		choixPrincipal(choix, liste);
+		choixPrincipal(menuPrincipal(0, liste), liste);
 	}
 	else if(nb_anno > 0)
 	{
@@ -90,8 +92,7 @@ void	menuAjout(Liste liste)
 		{
 			liste = ajouterAnnonce(liste, i+1);	
 		}
-		choix = menuPrincipal();
-		choixPrincipal(choix, liste);
+		choixPrincipal(menuPrincipal(0, liste), liste);
 	}
 	else 
 	{
@@ -103,7 +104,7 @@ void	menuAjout(Liste liste)
 
 // Fonction menuAffichage proposant l'affichage selon certains critères 
 
-int	menuAffichage()
+int	menuAffichage(int erreur_saisie)
 {
 	int	choix_affichage = 0;
 
@@ -115,8 +116,11 @@ int	menuAffichage()
 	printf("3. En fonction du nombre de pièce renseigné\n");
 	printf("4. En fonction de la surface habitable minimale\n");
 	printf("5. En fonction du nombre de pièces minimal et d'un loyer maximal\n");
-	printf("6. Retour au menu principal\n\n");
-	printf("Votre choix : ");
+	printf("0. Retour au menu principal\n\n");
+	if(erreur_saisie)
+		printf("Erreur de saisie, veuillez recommencer : ");
+	else	
+		printf("Votre choix : ");
 	scanf("%d", &choix_affichage);
 	return	choix_affichage;
 }
@@ -125,12 +129,10 @@ int	menuAffichage()
 
 void	choixAffichage(int choix, Liste liste)
 {
-	int test = 0;
-
 	switch(choix)
 	{
 		case 1 :
-			afficherAnnonce(liste);
+			afficherAnnonce(liste, 0);
 			break;
 		case 2 :
 			break;
@@ -140,13 +142,11 @@ void	choixAffichage(int choix, Liste liste)
 			break;
 		case 5 :
 			break;
-		case 6 :
-			test = menuPrincipal();
-			choixPrincipal(test,liste);
+		case 0 :
+			choixPrincipal(menuPrincipal(0, liste),liste);
 			break;
 		default :
-			printf("Erreur de saisie, veuillez recommencer :\n");
-			menuAffichage();
+			choixAffichage(menuAffichage(1), liste);
 			break;
 
 	}

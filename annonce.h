@@ -36,9 +36,15 @@ typedef	struct	Annonce
 
 typedef	Annonce* Liste;
 
-void	afficherAnnonce(Liste liste);
+void	afficherAnnonce(Liste liste, int erreur_saisie);
 
 Liste	ajouterAnnonce(Liste liste, int num_anno);
+
+void	ecrireAnnonce(Liste liste, FILE* fichier);
+
+Liste	lireAnnonce(Liste liste, FILE* fichier);
+
+int	calculerNbAnnonce(Liste liste);
 
 #endif
 
